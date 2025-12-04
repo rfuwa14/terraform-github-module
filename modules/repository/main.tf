@@ -19,14 +19,7 @@ resource "github_repository" "repo" {
   delete_branch_on_merge = var.delete_branch_on_merge
 }
 
-resource "github_issue_label" "question" {
-  repository  = github_repository.repo.name
-  name        = "question"
-  color       = "cc317c"
-  description = "any question ask"
-}
-
-data "github_branch" "main" {
+resource "github_branch" "main" {
   repository = github_repository.repo.name
   branch     = "main"
 
@@ -35,5 +28,5 @@ data "github_branch" "main" {
 
 resource "github_branch_default" "main" {
   repository = github_repository.repo.name
-  branch     = data.github_branch.main.branch
+  branch     = github_branch.main.branch
 }
