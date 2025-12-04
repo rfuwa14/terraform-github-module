@@ -16,6 +16,6 @@ module "repository" {
 
   repository_name        = "my-test-repo"
   repository_description = "my test repo (will be deleted soon)"
-  auto_init              = false
+  auto_init              = true
 }
 
