@@ -17,9 +17,6 @@ This Terraform configuration creates and manages a GitHub repository.
 
 2. Edit `terraform.tfvars` with your values:
    - `github_token`: Your GitHub personal access token
-   - `github_owner`: Your GitHub username or organization
-   - `repository_name`: Name for your new repository
-   - Other optional settings
 
 3. Initialize Terraform:
    ```bash

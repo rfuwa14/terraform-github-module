@@ -11,9 +11,11 @@ provider "github" {
   owner = "rfuwa14"
 }
 
-# module "repository" {
-#   source = "./modules/repository"
-#
-#   repository_name        = "my-test-repo"
-#   repository_description = "my test repo (will be deleted soon)"
-# }
+module "repository" {
+  source = "./modules/repository"
+
+  repository_name        = "my-test-repo"
+  repository_description = "my test repo (will be deleted soon)"
+  auto_init              = false
+}
+
