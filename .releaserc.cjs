@@ -5,6 +5,7 @@ if (!scope) {
 }
 
 module.exports = {
+  tagFormat: `${scope}@\${version}`,
   branches: ["master"],
   plugins: [
     [
