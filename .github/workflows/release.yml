@@ -36,7 +36,6 @@ jobs:
           private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
       - name: Release
-        working-directory: modules
-        run: npx semantic-release --config ${{ inputs.module }}/.releaserc.cjs
+        run: npx semantic-release --config modules/${{ inputs.module }}/.releaserc.cjs
         env:
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
