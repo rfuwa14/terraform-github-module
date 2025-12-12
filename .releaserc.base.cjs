@@ -1,5 +1,5 @@
 module.exports = {
-  branches: ["main"],
+  // branches: ["main", "master", "rfuwa/test"],
   plugins: [
     [
       "@semantic-release/commit-analyzer",
