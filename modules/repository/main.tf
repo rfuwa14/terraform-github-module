@@ -26,6 +26,8 @@ resource "github_branch" "main" {
   depends_on = [github_repository.repo]
 }
 
+
+
 resource "github_branch_default" "main" {
   repository = github_repository.repo.name
   branch     = github_branch.main.branch
