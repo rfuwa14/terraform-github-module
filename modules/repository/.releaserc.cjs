@@ -1,5 +1,5 @@
 module.exports = {
-  extends: "./modules/.releaserc.base.cjs",
+  extends: "../../.releaserc.base.cjs",
   tagFormat: "repository@${version}",
   plugins: [
     [
