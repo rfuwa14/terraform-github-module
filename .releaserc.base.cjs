@@ -1,3 +1,9 @@
+const scope = process.env.MODULE_SCOPE;
+
+if (!scope) {
+  throw new Error("MODULE_SCOPE environment variable is required");
+}
+
 module.exports = {
   branches: ["master"],
   plugins: [
@@ -6,14 +12,16 @@ module.exports = {
       {
         preset: "conventionalcommits",
         releaseRules: [
-          { type: "feat", release: "minor" },
-          { type: "fix", release: "patch" },
-          { type: "perf", release: "patch" },
-          { type: "refactor", release: "patch" },
-          { type: "docs", release: false },
-          { type: "style", release: false },
-          { type: "chore", release: false },
-          { type: "test", release: false },
+          { type: "feat", scope, release: "minor" },
+          { type: "fix", scope, release: "patch" },
+          { type: "perf", scope, release: "patch" },
+          { type: "refactor", scope, release: "patch" },
+          { type: "docs", scope, release: false },
+          { type: "style", scope, release: false },
+          { type: "chore", scope, release: false },
+          { type: "test", scope, release: false },
+          // Ignore commits without matching scope
+          { scope: "*", release: false },
         ],
       },
     ],
