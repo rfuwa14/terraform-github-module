@@ -27,7 +27,6 @@ jobs:
       - name: Install semantic-release
         run: npm ci
 
-        # TODO(rfuwa): define a dedicated app
       - name: Generate GitHub App Token
         id: generate-token
         uses: actions/create-github-app-token@df432ceedc7162793a195dd1713ff69aefc7379e # v2.0.6
@@ -36,6 +35,6 @@ jobs:
           private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
       - name: Release
-        run: npx semantic-release --config modules/${{ inputs.module }}/.releaserc.cjs
+        run: npx semantic-release --config ${{ github.workspace }}/modules/${{ inputs.module }}/.releaserc.cjs
         env:
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
