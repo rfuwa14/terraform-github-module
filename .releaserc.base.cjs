@@ -1,5 +1,5 @@
 module.exports = {
-  // branches: ["main", "master", "rfuwa/test"],
+  branches: ["master"],
   plugins: [
     [
       "@semantic-release/commit-analyzer",
@@ -21,12 +21,6 @@ module.exports = {
       "@semantic-release/release-notes-generator",
       {
         preset: "conventionalcommits",
-      },
-    ],
-    [
-      "@semantic-release/changelog",
-      {
-        changelogFile: "CHANGELOG.md",
       },
     ],
     [
