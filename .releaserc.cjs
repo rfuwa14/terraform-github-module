@@ -20,9 +20,7 @@ module.exports = {
           { type: "docs", scope, release: false },
           { type: "style", scope, release: false },
           { type: "chore", scope, release: false },
-          { type: "test", scope, release: false },
-          // Ignore commits without matching scope
-          { scope: "*", release: false },
+          { type: "test", scope, release: false }
         ],
       },
     ],
