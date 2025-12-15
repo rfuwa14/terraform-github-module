@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-slim
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - uses: actions/setup-node@39cd14951b08e453678f5d0ad4d4a69ede5cde12 # v4.2.0
+      - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
