@@ -1,0 +1,26 @@
+# NOTE: if there are changes in modules, check the PR title conforms to conventional commits format
+# because a PR is expected to be squash-merged with PR title.
+#
+# TODO(rfuwa): for more tigher guardrail, we could consider only allowing squash merge in this repo.
+name: Conventional Commits Linter
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+    paths:
+      - modules/
+
+permissions:
+  pull-requests: read
+
+jobs:
+  commitlint:
+    runs-on: ubuntu-slim
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@39cd14951b08e453678f5d0ad4d4a69ede5cde12 # v4.2.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+      - run: npm ci
+      - run: echo "${{ github.event.pull_request.title }}" | npx commitlint --verbose
