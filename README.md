@@ -51,3 +51,4 @@ See `variables.tf` for all available configuration options, including:
 ## Security Note
 
 Never commit `terraform.tfvars` or any file containing your GitHub token to version control. These files are already included in `.gitignore`.
+
